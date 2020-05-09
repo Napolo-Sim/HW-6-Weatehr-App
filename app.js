@@ -12,10 +12,18 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             //Don't forget to add https:// to all of your API URL's
-            url: `https://api.openweathermap.org/data/2.5/weather?q=Atherton&appid=44dcd9557c70cf145a53f5245ad9a8da`,
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`,
             dataType: "json",
         }).then(function (response) {
             console.log(response);
+
+            var cityName = response.name;
+            console.log(cityName);
+
+            $("#citySearches").prepend(
+                `<li class="list-group-item">${cityName}</li>`
+            )
+
 
             // var weatherData = response.main.temp;
             // console.log(weatherData);
