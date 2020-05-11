@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // var userSearch = "";
     var apiKey = "44dcd9557c70cf145a53f5245ad9a8da";
 
     $("#searchBtn").on("click", function (event) {
@@ -37,6 +36,8 @@ $(document).ready(function () {
             // $("#weatherInfo").append(
             //     `<h1>${tempFWhole} Degrees Fahrenheit</h1>`
             // )
+
+            //Laptop added?
         })
     })
 })
