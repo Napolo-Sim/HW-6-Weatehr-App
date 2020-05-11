@@ -4,71 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Weather App</title>
 </head>
 
 <body>
+    <!-- Navbar elements -->
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="./index.html">Weather Dashboard</a>
+        <a class="navbar-brand text-center" href="./index.html">Weather Dashboard</a>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-3-sm">
-                <div class="searchBox">
-                    <h3>Search for a City:</h3>
+    <!-- Results elements -->
+    <main class="container m-0 p-0">
+        <!-- Side bar elements -->
+        <div class="row col-12">
+            <aside class="bg-transparent">
+                <!-- <div class="card bg-transparent"> -->
+                <div class="card-body bg-transparent">
+                    <h5 class="card-title text-dark">Search for a City :</h5>
                     <form class="form-inline">
-                        <input id="userSearch" class="form-control mr-sm-2" type="search" placeholder="City Name"
-                            aria-label="Search">
-                        <button id="searchBtn" class="btn btn-outline-primary my-2 my-sm-0"
-                            type="submit">Search</button>
+                        <input id="textInput" autofocus class="col-6 form-control mr-sm-2" type="search"
+                            placeholder="City Name" aria-label="Search">
+                        <button id="submitBtn" class="col-2 btn btn-light my-2 my-sm-2"
+                            style="background-color: #e3f2fd;" type="submit">Go</button>
                     </form>
-                </div>
-
-                <div id="citySearchArea" class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                        <li id="citySearches" class="list-group-item"></li>
+                    <h5 class="card-title text-dark mt-2">Previous Searches :</h5>
+                    <ul class="list-group">
                     </ul>
                 </div>
-            </div>
+                <!-- </div> -->
+            </aside>
 
-            <div id="statBox" class="col-9-sm">
-                <div class="card" style="width: 18rem;">
-                    <div id="weatherInfo" class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's content.
-                        </p>
-                        <p class="card-text">Flupta Gupta</p>
-                        <p class="card-text">Hummer Aparatis</p>
+
+            <!-- Main city result -->
+            <div id="result" class="col-8 p-3" style="opacity: 85%; ;">
+                <div id="weatherInfoCard" class="card ml-3 mt-2">
+                    <div class="card-body" style="background-color: #e3f2fd;">
+                        <h5 id="mainCityName" class="card-title">cityName (date)</h5>
+                        <p id="mainTemp" class="card-text">Temperature :</p>
+                        <p id="mainHum" class="card-text">Humidity: </p>
+                        <p id="mainWind" class="card-text">Wind Speed :</p>
+                        <div>
+                            <p id="uvIndexText" class="card-text">UV Index :</p>
+                            <a id="mainUV" href="#" class="btn btn-dark"></a>
+                        </div>
                     </div>
                 </div>
-
-                <h3>5 Day Forecast:</h3>
-                <div class="card" style="width: 12rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                </div>
+                <h5 id="forcastTextID" class="text-dark card-title ml-3 mt-2 mb-2">
+                    Predicted Forecast :</h5>
+                <!-- Forecast created in JavaScript File -->
+                <div id="forecast" class="row"></div>
             </div>
         </div>
-    </div>
+
+
+
+    </main>
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./app.js"></script>
+
 </body>
 
 </html>
