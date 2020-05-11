@@ -8,6 +8,9 @@ $(document).ready(function () {
     $("#weatherInfoCard").hide();
     $("#forcastTextID").hide();
 
+    window.localStorage.setItem("city", JSON.stringify(history));
+    renderHistory(history)
+    $("#textInput").val("")
 
     // Button for new search
     $("#submitBtn").on("click", function (e) {
