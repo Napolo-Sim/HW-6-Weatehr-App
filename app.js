@@ -1,12 +1,12 @@
 $(document).ready(function () {
     var apiKey = "44dcd9557c70cf145a53f5245ad9a8da";
-
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
         userInput = $("#userSearch").val();
-        console.log(userInput);
+        // console.log(userInput);
         $("#userSearch").val("");
         $("#weatherInfo").html("");
+
 
         $.ajax({
             type: "GET",
@@ -17,10 +17,16 @@ $(document).ready(function () {
             console.log(response);
 
             var cityName = response.name;
-            console.log(cityName);
-
+            // console.log(cityName);
             $("#citySearches").prepend(
                 `<li class="list-group-item">${cityName}</li>`
+            )
+
+
+
+
+            $("#weatherInfo").prepend(
+                `<h5>${cityName} </h5> <p>Hey yall</p>`
             )
 
 
