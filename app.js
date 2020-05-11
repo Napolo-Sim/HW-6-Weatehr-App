@@ -5,8 +5,8 @@ $(document).ready(function () {
 
     // Initializes Page with Previous Searches and Hides data until Search
     renderHistory(history)
-    $("#weatherInfoCard").hide()
-    $("#forcastTextID").hide()
+    $("#weatherInfoCard").hide();
+    $("#forcastTextID").hide();
 
 
     // Button for new search
