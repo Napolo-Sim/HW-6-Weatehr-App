@@ -9,13 +9,10 @@ $(document).ready(function () {
     $("#forcastTextID").hide();
 
 
-    // Button submit to start a new search
+    // Button for new search
     $("#submitBtn").on("click", function (e) {
-
         e.preventDefault();
         userInput = $("#textInput").val();
-
-
         apiCalls(userInput).then(function () {
             if (history.length > 5) {
                 history.splice(0, 1)
@@ -43,7 +40,7 @@ $(document).ready(function () {
     }
 
 
-    // Function to render the last search on the side
+    // Function to render Search History on the side
     function renderHistory(arr1) {
         if (!arr1) {
             return;
@@ -57,8 +54,8 @@ $(document).ready(function () {
     // Function containing all API calls
     function apiCalls(str1) {
 
-        // Call Open weather, weather info
-        return $.ajax({ // Return to handle a 404
+        // Calls for Weather Info
+        return $.ajax({
             type: "GET",
             url: `https://api.openweathermap.org/data/2.5/weather?q=${str1},us&units=imperial&appid=${apiKey}`,
             dataType: "json",
