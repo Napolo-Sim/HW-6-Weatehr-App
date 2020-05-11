@@ -1,13 +1,17 @@
 $(document).ready(function () {
     var apiKey = "44dcd9557c70cf145a53f5245ad9a8da";
     var userInput = "";
-    var history = JSON.parse(window.localStorage.getItem("city"));
+    var history = JSON.parse(window.localStorage.getItem("city") || []);
 
     // Initializes Page with Previous Searches and Hides data until Search
     renderHistory(history)
     $("#weatherInfoCard").hide();
     $("#forcastTextID").hide();
 
+
+    window.localStorage.setItem("city", JSON.stringify(history));
+    renderHistory(history)
+    $("#textInput").val("")
 
     // Button for new search
     $("#submitBtn").on("click", function (e) {
