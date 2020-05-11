@@ -8,7 +8,6 @@ $(document).ready(function () {
     $("#weatherInfoCard").hide();
     $("#forcastTextID").hide();
 
-
     // Button for new search
     $("#submitBtn").on("click", function (e) {
         e.preventDefault();
